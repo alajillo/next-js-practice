@@ -1,3 +1,3 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-[start with this](https://nextjs.org/learn/basics/data-fetching)
+[start from here](https://nextjs.org/learn/basics/api-routes)
