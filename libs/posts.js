@@ -13,7 +13,7 @@ export function getSortedPostsData(){
         const fileContents = fs.readFileSync(fullPath,'utf-8');
 
         const matterResult = matter(fileContents);
-
+        console.log("matterResult : ", matterResult);
         return {
             id,
             ...matterResult.data
@@ -29,4 +29,27 @@ export function getSortedPostsData(){
             return 0;
         }
     })
+}
+
+export function getAllPostIds(){
+    const fileNmaes = fs.readdirSync(postsDirectory);
+    return fileNmaes.map(fileName => {
+        return {
+            params : {
+                id : fileName.replace(/\.md$/,""),
+            }
+        }
+    })
+}
+
+export function getPostData(id){
+    const fullPath = path.join(postsDirectory,`${id}.md`);
+    const fileContents = fs.readFileSync(fullPath,'utf8');
+
+    const matterResult = matter(fileContents);
+
+    return {
+        id,
+        ...matterResult.data,
+    }
 }
