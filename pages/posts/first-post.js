@@ -32,11 +32,6 @@ export default function FirstPost(){
                 <button onClick={onClickButton}>
                     {data ? 'data is true' : 'data is false'}
                 </button>
-                <h2>
-                    <Link href="/">
-                        <a>Back to home</a>
-                    </Link>
-                </h2>
             </Layout>
 
     )
