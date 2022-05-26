@@ -14,7 +14,6 @@ export function getSortedPostsData(){
         const fileContents = fs.readFileSync(fullPath,'utf-8');
 
         const matterResult = matter(fileContents);
-        console.log("matterResult : ", matterResult);
         return {
             id,
             ...matterResult.data
@@ -43,7 +42,7 @@ export function getAllPostIds(){
     })
 }
 
-export async function getPostData(id){
+export async function getPostData(id : string){
     const fullPath = path.join(postsDirectory,`${id}.md`);
     const fileContents = fs.readFileSync(fullPath,'utf8');
 

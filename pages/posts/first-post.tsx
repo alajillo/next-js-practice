@@ -8,7 +8,7 @@ function testApiRoute(){
     fetch('/api/hello').then(data=> data.json()).then(result=> console.log(result));
 }
 export default function FirstPost(){
-    const [data, setData] = useState(false);
+    const [data, setData] = useState<boolean>(false);
     const onClickButton = () => {
         setData(v=>!v);
     }

@@ -8,7 +8,10 @@ const name = 'alajillo';
 
 export const siteTitle = 'Next.js Sample Website';
 
-export default function LayOut({children, home}){
+export default function LayOut({children, home} : {
+    children : React.ReactNode
+    home? : boolean
+}){
     return (
         <div className={styles.container}>
             <Head>
